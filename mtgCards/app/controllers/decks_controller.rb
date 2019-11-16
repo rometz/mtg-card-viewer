@@ -1,15 +1,24 @@
 class DecksController < ApplicationController
 
     def index
+        @decks = Deck.all
+        render json: @decks
     end
 
     def show
+        @deck = Deck.find(params[:id])
+        render json: @deck
     end
 
     def create
+        @deck = Deck.create(
+            name: params["name"]
+        )
+        render json: @deck
     end
 
-    def delete_all
+    def delete
+        Deck.delete(params[:id])
     end
 
     private
