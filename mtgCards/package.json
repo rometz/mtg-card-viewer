@@ -1,5 +1,5 @@
 {
-  "name": "mtg_cards",
+  "name": "mtgCards",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
