@@ -5,7 +5,9 @@ function AppRouter() {
     return (
         <Router>
             <div className="App App-body">
-
+                <Switch>
+                    <Route path="/" exact component={} />
+                </Switch>
             </div>
         </Router>
     )
