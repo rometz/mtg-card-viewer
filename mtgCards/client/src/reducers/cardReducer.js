@@ -20,3 +20,5 @@ function cardReducer(state = {
             return state
     }
 }
+
+export default cardReducer;
