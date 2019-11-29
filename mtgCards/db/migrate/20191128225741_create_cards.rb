@@ -5,5 +5,6 @@ class CreateCards < ActiveRecord::Migration[6.0]
       t.integer :multiverseid
       t.string :url
       t.integer :deck_id, array: true
+    end
   end
 end
