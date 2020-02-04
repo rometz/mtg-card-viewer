@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # Magic: The Gathering SDK Ruby implementation. Wraps around the MTG API of magicthegathering.io
 gem 'mtg_sdk'
 
+# Axios to make api requests
+gem 'axios_rails', '~> 0.7.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
