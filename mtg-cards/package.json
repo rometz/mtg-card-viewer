@@ -1,5 +1,5 @@
 {
-  "name": "mtgCards",
+  "name": "mtg-cards",
   "private": true,
   "proxy": {
     "/api": {

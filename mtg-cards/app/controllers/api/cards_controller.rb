@@ -28,7 +28,7 @@ module Api::V1
         private
 
         def card_params
-            params.require(:card).permit(:name, :id)
+            params.require(:card).permit(:name, :multiverseid, :url, :deck_id)
         end
     end
 end

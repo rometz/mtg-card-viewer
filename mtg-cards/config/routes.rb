@@ -13,6 +13,5 @@ Rails.application.routes.draw do
 
   get '/api/v1/mtgapi/fetchbooster', to: 'mtgapi#fetch_booster', as: 'fetch_booster'
 
-  #root 'static#index'
   get '*path', to: 'static#index'
 end
