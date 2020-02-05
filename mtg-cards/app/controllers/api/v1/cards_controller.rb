@@ -12,10 +12,7 @@ module Api::V1
         end
 
         def create
-            @card = Card.create(
-                name: params["name"]
-                multiverseid: params["id"]
-            )
+            @card = Card.create(card_params)
             render json: @card
         end
 
