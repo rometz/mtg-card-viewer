@@ -7,11 +7,13 @@ Rails.application.routes.draw do
       resources :cards do
         delete :index, on: :collection, action: :delete_all
       end
+      get 'mtgapi/fetchbooster', to: 'mtgapi#fetch_booster', as: 'fetch_booster'
+
       root "static#index"
     end
   end
 
-  get '/api/v1/mtgapi/fetchbooster', to: 'mtgapi#fetch_booster', as: 'fetch_booster'
+  #get '/api/v1/mtgapi/fetchbooster', to: 'mtgapi#fetch_booster', as: 'fetch_booster'
 
   get '*path', to: 'static#index'
 end

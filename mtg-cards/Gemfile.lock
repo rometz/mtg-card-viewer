@@ -250,7 +250,7 @@ DEPENDENCIES
   mtg_sdk
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
-  rack-cors
+  rack-cors (~> 0.4.0)
   rails (~> 6.0.1)
   sass-rails (>= 6)
   selenium-webdriver

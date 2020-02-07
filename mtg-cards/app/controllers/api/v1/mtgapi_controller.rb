@@ -6,6 +6,7 @@ module Api::V1
         def fetch_booster
             # need to handle passed parameters for set name
             # hardcoding a specific set: 'ktk' for now 11/24
+            byebug
             @set = 'ktk'
             @booster = MTG::Set.generate_booster(@set)
             console.log(@booster)
