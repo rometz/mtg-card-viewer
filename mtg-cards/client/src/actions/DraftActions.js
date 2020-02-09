@@ -22,7 +22,7 @@ export function fetchAllSets() {
         const response = await fetch(url);
         const data = await response.json();
         return dispatch({
-            type: 'FETCH_ALL_SETS', payload: data
+            type: 'FETCH_CARDS', payload: data
         });
     };
 }
