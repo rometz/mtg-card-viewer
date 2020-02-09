@@ -8,7 +8,9 @@ Rails.application.routes.draw do
         delete :index, on: :collection, action: :delete_all
       end
       get 'mtgapi/fetchbooster', to: 'mtgapi#fetch_booster', as: 'fetch_booster'
-
+      get 'mtgapi/fetchallsets', to: 'mtgapi#fetch_all_sets', as: 'fetch_sets'
+      get 'mtgapi/fetchset', to: 'mtgapi#fetch_set', as: 'fetch_set'
+      
       root "static#index"
     end
   end
