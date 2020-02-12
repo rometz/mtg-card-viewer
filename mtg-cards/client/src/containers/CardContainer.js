@@ -22,14 +22,15 @@ const CardContainer = () => {
         dispatch(fetchAllSets())
     }, []);
 
+    // will be called when the user wants to view a list of sets
     handleSetViewer = () => {
         const setProps = [];
         sets.forEach(
-            s => setProps.push(s.code)
+            s => setProps.push({code: s.code}, {name: s.name})
         );
         console.log(setProps);
         return setProps.map(
-            s => <SetHandler key={s.indexOf(s.code)} namej={s.code} />
+            s => <SetHandler key={s.code} name={s.name} />
         )
     }
 
