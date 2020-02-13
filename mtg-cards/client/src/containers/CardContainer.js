@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 //import Card from '../components/Card';
-import SetHandler from '../components/SetHandler';
+import useListSets from '../components/useListSets';
 import { useDispatch, useSelector } from 'react-redux';
 //import { createSelector } from 'reselect';
 //import { createCard } from '../actions/CardActions';
@@ -16,6 +16,7 @@ const CardContainer = () => {
     }));
     const cardsReturned = useState([]);
     const showSets = useState(false);
+    const setList = useListSets();
     
     // upon mounting, fetch all sets from mtg_sdk
     useEffect(() => {
@@ -26,12 +27,13 @@ const CardContainer = () => {
     handleSetViewer = () => {
         const setProps = [];
         sets.forEach(
-            s => setProps.push({code: s.code}, {name: s.name})
+            s => setProps.push(({code: s.code}, {name: s.name}))
         );
         console.log(setProps);
-        return setProps.map(
-            s => <SetHandler key={s.code} name={s.name} />
-        )
+        setProps.map(
+            s => setList(s)
+        );
+        
     }
 
     return (
@@ -40,7 +42,7 @@ const CardContainer = () => {
             <button>Sets</button>
             
             <div className="sets-menu">
-                {this.handleSetViewer()}
+                {handleSetViewer()}
             </div>
         </main>
     );
