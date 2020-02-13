@@ -24,16 +24,17 @@ const CardContainer = () => {
     }, []);
 
     // will be called when the user wants to view a list of sets
-    handleSetViewer = () => {
+    function handleSetViewer() {
         const setProps = [];
-        sets.forEach(
-            s => setProps.push(({code: s.code}, {name: s.name}))
-        );
-        console.log(setProps);
-        setProps.map(
-            s => setList(s)
-        );
-        
+        if (sets !== undefined) {
+            sets.forEach(
+                s => setProps.push(({code: s.code}, {name: s.name}))
+            );
+            console.log(setProps);
+            setProps.map(
+                s => setList(s)
+            );
+        }
     }
 
     return (
