@@ -7,7 +7,7 @@ function draftingReducer(state = {
             return {...state, loading: true, draftingData: [], }
 
         case "FETCH_CARDS":
-            return {...state, loading: false, draftingData: action.payload}
+            return {...state, loading: true, draftingData: action.payload}
 
         default:
             return state
