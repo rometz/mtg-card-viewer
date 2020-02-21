@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllSets } from '../actions/DraftActions';
+import { fetchAllSets } from '../actions/SetActions';
 
 function SetsDropDown() {
     const dispatch = useDispatch();
