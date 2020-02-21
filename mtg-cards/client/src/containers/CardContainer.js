@@ -33,10 +33,7 @@ const CardContainer = () => {
     return (
         <main>
             <button onClick={() => dispatch(fetchBooster())}>Fetch a booster</button>
-            
-            <div className="sets-menu">
-                {handleSetViewer()}
-            </div>
+            {setList}
         </main>
     );
 };

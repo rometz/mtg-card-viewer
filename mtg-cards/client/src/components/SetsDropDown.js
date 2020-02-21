@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllSets } from '../actions/DraftActions';
 
 function SetsDropDown() {
     const dispatch = useDispatch();
-    const sets = useState([]);
-
+    const { allSets } = useSelector(state => ({
+        allSets: state.drafts.draftingData
+    }));
+    console.log(allSets)
     //initially, we'll hardcode this for something to work with
     const setItemHC = useState([
         {
@@ -16,12 +18,14 @@ function SetsDropDown() {
     ])
 
     useEffect(() => {
-        sets.push(dispatch(fetchAllSets()))
+        dispatch(fetchAllSets())
     }, []);
+
+    
     
     return(
         <select>
-            {setItemHC.map(({ code, name}) => (
+            {allSets.map(({code, name}) => (
                 <option key={code} value={code}>
                     {name}
                 </option>
