@@ -7,21 +7,13 @@ function SetsDropDown() {
     const { allSets } = useSelector(state => ({
         allSets: state.drafts.draftingData
     }));
-    console.log(allSets)
+    const userSet = useState("");
     //initially, we'll hardcode this for something to work with
-    const setItemHC = useState([
-        {
-            code: 1,
-            name: "bob"
-        },
-        { code: 2, name: 'bob2'}
-    ])
 
     useEffect(() => {
         dispatch(fetchAllSets())
     }, []);
 
-    
     
     return(
         <select>
