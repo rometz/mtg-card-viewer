@@ -10,3 +10,17 @@ export function fetchAllSets() {
         });
     };
 }
+
+// load a specific sets cards
+export function fetchSet(id) {
+    return async (dispatch) => {
+        dispatch({type: "LOADING_SET"});
+        // need route and method for RoR api
+        const url = '';
+        const response = await fetch(url);
+        const data = await response.json();
+        return dispatch({
+            type: 'FETCH_CARDS', payload: data
+        });
+    };
+}
